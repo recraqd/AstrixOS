@@ -46,6 +46,6 @@ export default class DesktopEnvironment {
   }
 
   showAbout() {
-    this.notificationService.show('About', 'AstrixOS v1.0.0 - A browser-based operating system with App Developer!', 'info');
+    this.notificationService.show('About', 'AstrixOS v1.0.0 - Create and run custom apps with App Developer!', 'info');
   }
 }
