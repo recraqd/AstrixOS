@@ -1,9 +1,17 @@
 // App Manager - Handles app loading and launching
+import AppDeveloper from './AppDeveloper.js';
+import AppDevKit from '../services/AppDevKit.js';
+import CustomAppLoader from './CustomAppLoader.js';
+
 export default class AppManager {
-  constructor(windowManager) {
+  constructor(windowManager, taskbarManager) {
     this.windowManager = windowManager;
+    this.taskbarManager = taskbarManager;
     this.apps = [];
     this.runningApps = new Map();
+    this.appDevKit = new AppDevKit();
+    this.customAppLoader = new CustomAppLoader(this.appDevKit);
+    this.appDeveloper = null;
   }
 
   async loadApps() {
@@ -15,6 +23,19 @@ export default class AppManager {
       // Load default apps
       this.apps = this.getDefaultApps();
     }
+    
+    // Add App Developer to the list
+    this.apps.push({
+      id: 'app-developer',
+      name: 'App Developer',
+      icon: '🛠️',
+      category: 'Development',
+      description: 'Create and manage custom apps'
+    });
+    
+    // Load custom apps
+    const customApps = this.customAppLoader.loadCustomApps();
+    this.apps.push(...customApps);
   }
 
   getDefaultApps() {
@@ -40,7 +61,19 @@ export default class AppManager {
       return;
     }
 
-    // Create new window
+    // Handle App Developer specially
+    if (appId === 'app-developer') {
+      this.launchAppDeveloper();
+      return;
+    }
+
+    // Handle custom apps
+    if (app.custom) {
+      this.launchCustomApp(app, appId);
+      return;
+    }
+
+    // Create new window for built-in apps
     const windowObj = this.windowManager.createWindow({
       id: `window-${appId}`,
       title: app.name,
@@ -58,7 +91,38 @@ export default class AppManager {
     this.loadAppContent(appId, body);
 
     // Add to taskbar
-    document.querySelector('.taskbar-manager')?.addTaskbarApp(appId, app.name, app.icon);
+    this.taskbarManager?.addTaskbarApp(appId, app.name, app.icon);
+  }
+
+  launchAppDeveloper() {
+    if (!this.appDeveloper) {
+      this.appDeveloper = new AppDeveloper(this.windowManager, this.taskbarManager);
+    }
+    this.appDeveloper.launch();
+  }
+
+  launchCustomApp(app, appId) {
+    const windowObj = this.windowManager.createWindow({
+      id: `window-${appId}`,
+      title: app.name,
+      icon: app.icon,
+      width: '700px',
+      height: '500px',
+      x: Math.random() * 200 + 50,
+      y: Math.random() * 200 + 50
+    });
+
+    this.runningApps.set(appId, windowObj);
+    const body = this.windowManager.getWindowBody(windowObj.id);
+    
+    try {
+      this.customAppLoader.runApp(appId, body, this.windowManager);
+    } catch (e) {
+      body.innerHTML = `<div style="padding: 20px; color: red;"><h3>Error Loading App</h3><p>${e.message}</p></div>`;
+    }
+
+    // Add to taskbar
+    this.taskbarManager?.addTaskbarApp(appId, app.name, app.icon);
   }
 
   loadAppContent(appId, container) {
