@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstrixOS - Quick Start</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        header p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+        
+        .content {
+            background: rgba(30, 41, 59, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        section:last-child {
+            margin-bottom: 0;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #06b6d4;
+        }
+        
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #818cf8;
+        }
+        
+        p, li {
+            line-height: 1.6;
+            color: #cbd5e1;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            margin-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .feature-item strong {
+            color: #818cf8;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #6366f1;
+            color: #818cf8;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            color: #f87171;
+        }
+        
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid #6366f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        footer {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✦ AstrixOS</h1>
+            <p>A complete browser-based operating system</p>
+        </header>
+        
+        <div class="content">
+            <section>
+                <h2>🚀 Quick Start</h2>
+                <p>AstrixOS is ready to use! Simply click the button below to launch the operating system.</p>
+                <div class="button-group">
+                    <a href="index.html" class="btn btn-primary">Launch AstrixOS</a>
+                    <a href="https://github.com/recraqd/AstrixOS" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                </div>
+            </section>
+            
+            <section>
+                <h2>✨ Features</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <strong>🎬 Boot Animation</strong>
+                        <p>Smooth startup sequence with progress indicator</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>🔒 Lock Screen</strong>
+                        <p>Secure access with time and date display</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>👤 User Login</strong>
+                        <p>Authentication system for multi-user support</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>🪟 Window Manager</strong>
+                        <p>Draggable, resizable windows with full controls</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>📱 Taskbar</strong>
+                        <p>Start menu and app launcher with search</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>🔔 Notifications</strong>
+                        <p>Toast notifications and notification center</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>🌓 Theme Support</strong>
+                        <p>Dark and light mode with persistent storage</p>
+                    </div>
+                    <div class="feature-item">
+                        <strong>📦 Built-in Apps</strong>
+                        <p>Calculator, Notes, Calendar, Files, Browser, Settings</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>📚 Built-in Applications</h2>
+                <h3>🧮 Calculator</h3>
+                <p>A fully functional calculator with basic arithmetic operations.</p>
+                
+                <h3>📝 Notes</h3>
+                <p>Text editor with local storage persistence. Your notes are saved automatically.</p>
+                
+                <h3>📅 Calendar</h3>
+                <p>Calendar view showing the current month with date navigation.</p>
+                
+                <h3>📁 File Manager</h3>
+                <p>Browse and manage system folders (simulated file system).</p>
+                
+                <h3>🌐 Browser</h3>
+                <p>Simplified web browser interface for demonstration.</p>
+                
+                <h3>⚙️ Settings</h3>
+                <p>System preferences and configuration options.</p>
+            </section>
+            
+            <section>
+                <h2>🎮 How to Use</h2>
+                <ul>
+                    <li><strong>Login:</strong> Use any username and password (demo mode)</li>
+                    <li><strong>Unlock:</strong> Click or press any key on the lock screen</li>
+                    <li><strong>Launch Apps:</strong> Click the Start menu button (bottom-left) or search in the taskbar</li>
+                    <li><strong>Move Windows:</strong> Click and drag the title bar</li>
+                    <li><strong>Resize Windows:</strong> Drag the corner handle</li>
+                    <li><strong>Context Menu:</strong> Right-click on the desktop</li>
+                    <li><strong>Theme:</strong> Toggle dark/light mode in Quick Settings</li>
+                    <li><strong>Notifications:</strong> Check the notification center (bell icon)</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🛠️ Technology Stack</h2>
+                <ul>
+                    <li><strong>HTML5:</strong> Semantic markup and structure</li>
+                    <li><strong>CSS3:</strong> Modern styling with CSS variables and Grid/Flexbox</li>
+                    <li><strong>JavaScript ES6+:</strong> Modular architecture with classes and modules</li>
+                    <li><strong>LocalStorage:</strong> Browser data persistence</li>
+                    <li><strong>IndexedDB:</strong> Advanced data storage (when available)</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>📂 Project Structure</h2>
+                <div class="code-block">
+<pre>AstrixOS/
+├── index.html              # Main entry point
+├── css/                    # Stylesheets
+│   ├── variables.css       # Design tokens
+│   ├── base.css           # Base styles
+│   ├── boot.css           # Boot screen
+│   ├── lock.css           # Lock screen
+│   ├── login.css          # Login screen
+│   ├── desktop.css        # Desktop
+│   ├── taskbar.css        # Taskbar
+│   ├── window.css         # Windows
+│   ├── notifications.css  # Notifications
+│   ├── settings.css       # Settings
+│   └── context-menu.css   # Context menu
+├── js/                     # JavaScript modules
+│   ├── main.js            # Entry point
+│   ├── modules/           # Core modules
+│   │   ├── BootManager.js
+│   │   ├── LockScreen.js
+│   │   ├── LoginScreen.js
+│   │   ├── DesktopEnvironment.js
+│   │   ├── WindowManager.js
+│   │   ├── TaskbarManager.js
+│   │   ├── AppManager.js
+│   │   └── ContextMenu.js
+│   └── services/          # Services
+│       ├── StorageService.js
+│       ├── ThemeService.js
+│       └── NotificationService.js
+├── system/
+│   └── apps.json          # App manifest
+├── README.md              # Documentation
+├── DEVELOPMENT.md         # Dev guide
+└── package.json           # Project metadata</pre>
+                </div>
+            </section>
+            
+            <section>
+                <h2>🌐 Browser Compatibility</h2>
+                <ul>
+                    <li>Chrome/Edge 90+</li>
+                    <li>Firefox 88+</li>
+                    <li>Safari 14+</li>
+                    <li>Opera 76+</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>📖 Documentation</h2>
+                <p>For more detailed information:</p>
+                <ul>
+                    <li><a href="README.md" style="color: #818cf8; text-decoration: underline;">README.md</a> - Complete documentation</li>
+                    <li><a href="DEVELOPMENT.md" style="color: #818cf8; text-decoration: underline;">DEVELOPMENT.md</a> - Development guide and API reference</li>
+                </ul>
+            </section>
+            
+            <div class="button-group">
+                <a href="index.html" class="btn btn-primary">Launch AstrixOS Now</a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 AstrixOS - A browser-based operating system</p>
+        </footer>
+    </div>
+</body>
+</html>
