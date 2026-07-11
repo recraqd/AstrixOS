@@ -1,0 +1,9 @@
+{
+  "name": "AstrixOS",
+  "version": "1.0.0",
+  "description": "A browser-based operating system",
+  "type": "module",
+  "author": "recraqd",
+  "license": "MIT",
+  "keywords": ["os", "browser", "web-app", "desktop"]
+}

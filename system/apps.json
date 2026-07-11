@@ -1,0 +1,44 @@
+[
+  {
+    "id": "files",
+    "name": "Files",
+    "icon": "📁",
+    "category": "System",
+    "description": "File manager"
+  },
+  {
+    "id": "browser",
+    "name": "Browser",
+    "icon": "🌐",
+    "category": "Internet",
+    "description": "Web browser"
+  },
+  {
+    "id": "notes",
+    "name": "Notes",
+    "icon": "📝",
+    "category": "Productivity",
+    "description": "Text editor and notes"
+  },
+  {
+    "id": "calculator",
+    "name": "Calculator",
+    "icon": "🧮",
+    "category": "Utilities",
+    "description": "Simple calculator"
+  },
+  {
+    "id": "calendar",
+    "name": "Calendar",
+    "icon": "📅",
+    "category": "Productivity",
+    "description": "Calendar and events"
+  },
+  {
+    "id": "settings",
+    "name": "Settings",
+    "icon": "⚙️",
+    "category": "System",
+    "description": "System settings"
+  }
+]
