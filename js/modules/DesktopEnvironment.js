@@ -12,7 +12,7 @@ export default class DesktopEnvironment {
     this.desktop = document.getElementById('desktop');
     this.windowManager = new WindowManager();
     this.taskbarManager = new TaskbarManager();
-    this.appManager = new AppManager(this.windowManager);
+    this.appManager = new AppManager(this.windowManager, this.taskbarManager);
     this.contextMenu = new ContextMenu();
     this.notificationService = new NotificationService();
   }
@@ -37,14 +37,15 @@ export default class DesktopEnvironment {
     this.desktop.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       this.contextMenu.show(e.clientX, e.clientY, [
-        { label: 'Refresh', action: () => location.reload() },
+        { label: 'App Developer', action: () => this.appManager.launchApp('app-developer') },
         { label: 'Settings', action: () => this.appManager.launchApp('settings') },
+        { label: 'Refresh', action: () => location.reload() },
         { label: 'About AstrixOS', action: () => this.showAbout() }
       ]);
     });
   }
 
   showAbout() {
-    this.notificationService.show('About', 'AstrixOS v1.0.0 - A browser-based operating system', 'info');
+    this.notificationService.show('About', 'AstrixOS v1.0.0 - A browser-based operating system with App Developer!', 'info');
   }
 }
